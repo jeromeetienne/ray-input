@@ -131,6 +131,7 @@ export default class RayController extends EventEmitter {
 
   update() {
     let mode = this.getInteractionMode();
+    console.log('mode', mode)
     if (mode == InteractionModes.VR_3DOF || mode == InteractionModes.VR_6DOF) {
       // If we're dealing with a gamepad, check every animation frame for a
       // pressed action.
@@ -252,6 +253,7 @@ export default class RayController extends EventEmitter {
    * Gets the first VR-enabled gamepad.
    */
   getVRGamepad_() {
+return window.myGamepad          
     // If there's no gamepad API, there's no gamepad.
     if (!navigator.getGamepads) {
       return null;
