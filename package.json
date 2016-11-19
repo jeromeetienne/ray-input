@@ -5,6 +5,7 @@
   "main": "src/ray-input.js",
   "scripts": {
     "build": "browserify -vdt [ babelify --presets [ es2015 ] ] src/ray-input.js -o build/ray.js",
+    "watch": "watchify -vdt [ babelify --presets [ es2015 ] ] src/ray-input.js -o build/ray.js",
     "start": "watchify -vdt [ babelify --presets [ es2015 ] ] src/example/main.js -o build/example.js",
     "watch-simulator": "watchify -vdt [ babelify --presets [ es2015 ] ] src/simulator/main.js -o build/simulator.js"
   },

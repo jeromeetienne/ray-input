@@ -213,3 +213,5 @@ export default class OrientationArmModel {
     return vec1.angleTo(vec2);
   }
 }
+
+window.OrientationArmModel = OrientationArmModel

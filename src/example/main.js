@@ -17,9 +17,9 @@ import MenuRenderer from './renderer.js';
 
 let renderer;
 let vrDisplay;
-
 function onLoad() {
   renderer = new MenuRenderer();
+window.renderer = renderer
 
   window.addEventListener('resize', () => { renderer.resize() });
 

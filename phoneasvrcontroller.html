@@ -27,10 +27,18 @@ canvas {
       <script src="build/example.js"></script>
 
 
-        <!-- enable PhoneAsVRController -->
-        <script src="http://127.0.0.1:3000/socket.io/socket.io.js"></script>
-        <script src="http://127.0.0.1:3000/phoneasvrcontroller.js"></script>
-        <script>PhoneAsVRController.overloadGetpadsAPI()</script>
+        <!-- enable PhoneAsVRController. it overloads gamepad api -->
+        <script src="http://127.0.0.1:3000/node_modules/socket.io-client/socket.io.js"></script>
+        <script src="http://127.0.0.1:3000/examples/js/phoneasvrcontrollercontext.js"></script>
+        <script src="http://127.0.0.1:3000/examples/js/phoneasvrcontrollerphone.js"></script>
+        <script>
+                window.addEventListener('load', function(){
+                        var serverUrl = 'http://127.0.0.1:4000'
+                        // FIXME take the proper camera - used for controller recalibration
+                        var camera = new THREE.PerspectiveCamera(75, 16/9, 0.1, 100)
+                        PhoneAsVRController.overloadGamepadsAPI(serverUrl, camera)                        
+                });
+        </script>
 
 
 </body>
